@@ -2,6 +2,7 @@ package nl.cqit.function.poc.java.boxedhello.controller;
 
 import jakarta.validation.Valid;
 
+import nl.cqit.function.poc.java.boxedhello.services.helloworld.HelloWorldApi;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/")
-public class SayHelloController {
+public class SayHelloController implements HelloWorldApi {
 
 	@RequestMapping(
 			method = RequestMethod.POST,
@@ -23,7 +24,7 @@ public class SayHelloController {
 			consumes = {"application/json"}
 	)
 	@ResponseStatus(HttpStatus.OK)
-	String sayHello(
+	public String sayHello(
 			@Valid @RequestBody Person person
 	) {
 		return "Hello, " + person.getFirstName();
