@@ -7,7 +7,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.0.8</version>
+        <version>3.2.5</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -35,10 +35,10 @@
         <function.interface>${function.apiPackage}.BoxedHello</function.interface>
         <function.entrypoint>sayHello</function.entrypoint>
 
-        <java.version>19</java.version>
-        <spring-boot.version>3.0.8</spring-boot.version>
-        <spring-cloud.version>2022.0.3</spring-cloud.version>
-        <native-build-tools-plugin.version>0.9.23</native-build-tools-plugin.version>
+        <java.version>21</java.version>
+        <spring-boot.version>3.2.5</spring-boot.version>
+        <spring-cloud.version>2023.0.1</spring-cloud.version>
+        <native-build-tools-plugin.version>0.10.1</native-build-tools-plugin.version>
     </properties>
 
     <dependencyManagement>
@@ -55,7 +55,7 @@
             <dependency>
                 <groupId>io.swagger.core.v3</groupId>
                 <artifactId>swagger-annotations</artifactId>
-                <version>2.2.8</version>
+                <version>2.2.15</version>
             </dependency>
             <dependency>
                 <groupId>org.openapitools</groupId>
@@ -67,26 +67,26 @@
             <dependency>
                 <groupId>org.yaml</groupId>
                 <artifactId>snakeyaml</artifactId>
-                <version>2.0</version>
+                <version>2.2</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
-    <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.graalvm.buildtools</groupId>
-                    <artifactId>native-maven-plugin</artifactId>
-                    <version>${native-build-tools-plugin.version}</version>
-                    <extensions>true</extensions>
-                </plugin>
-                <plugin>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-maven-plugin</artifactId>
-                    <version>${spring-boot.version}</version>
-                </plugin>
-            </plugins>
-        </pluginManagement>
-    </build>
+<!--    <build>-->
+<!--        <pluginManagement>-->
+<!--            <plugins>-->
+<!--                <plugin>-->
+<!--                    <groupId>org.graalvm.buildtools</groupId>-->
+<!--                    <artifactId>native-maven-plugin</artifactId>-->
+<!--                    <version>${native-build-tools-plugin.version}</version>-->
+<!--                    <extensions>true</extensions>-->
+<!--                </plugin>-->
+<!--                <plugin>-->
+<!--                    <groupId>org.springframework.boot</groupId>-->
+<!--                    <artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--                    <version>${spring-boot.version}</version>-->
+<!--                </plugin>-->
+<!--            </plugins>-->
+<!--        </pluginManagement>-->
+<!--    </build>-->
 
 </project>
