@@ -1,3 +1,5 @@
+`cd boxedhello-minimal-app`
+
 `mvn clean native:compile -Pnative`
 
 `./target/boxedhello-minimal-app`
