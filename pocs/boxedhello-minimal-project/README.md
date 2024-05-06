@@ -2,4 +2,9 @@
 
 `./target/boxedhello-minimal-app`
 
-`http GET :8080/`
+```bash
+curl --header "Content-Type: application/json" \
+--request POST \
+--data '{"firstName":"John","lastName":"Johnson"}' \
+http://localhost:8080/boxedHello
+```
