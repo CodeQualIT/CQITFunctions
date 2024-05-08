@@ -1,5 +1,6 @@
 package nl.cqit.function.poc.java.helloworld.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.json.JsonParseException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
@@ -13,29 +14,28 @@ import java.net.URI;
 import java.util.HashMap;
 import java.util.Map;
 
+@Slf4j
 @ControllerAdvice
 public class HelloWorldControllerAdvice extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(RuntimeException.class)
     public ProblemDetail handleRuntimeException(RuntimeException ex, WebRequest request) {
-
+        log.error("Unhandled exception", ex);
         if (ex instanceof JsonParseException) {
-            ProblemDetail body = getExceptionProblemDetail(
+            return getExceptionProblemDetail(
                     HttpStatus.BAD_REQUEST,
                     "/errors/validation-failed",
                     "Validation failed",
                     ex
             );
-            return body;
         }
 
-        ProblemDetail body = getExceptionProblemDetail(
+        return getExceptionProblemDetail(
                 HttpStatus.INTERNAL_SERVER_ERROR,
                 "/errors/unhandled-exception",
                 "Encountered an unhandled exception",
                 ex
         );
-        return body;
     }
 
     private ProblemDetail getExceptionProblemDetail(

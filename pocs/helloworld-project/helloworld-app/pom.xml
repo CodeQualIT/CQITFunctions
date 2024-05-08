@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>nl.cqit.function.poc.java</groupId>
-        <artifactId>helloworld-generated</artifactId>
+        <artifactId>helloworld-project</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
@@ -14,8 +14,23 @@
     <dependencies>
         <dependency>
             <groupId>nl.cqit.function.poc.java</groupId>
-            <artifactId>helloworld-controller</artifactId>
+            <artifactId>helloworld-minimal-interface</artifactId>
             <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
         </dependency>
 
 <!--        <dependency>-->
