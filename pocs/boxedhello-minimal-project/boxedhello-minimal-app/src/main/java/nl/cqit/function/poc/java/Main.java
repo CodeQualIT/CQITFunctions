@@ -1,4 +1,4 @@
-package nl.cqit.function.poc.java.boxedhello;
+package nl.cqit.function.poc.java;
 
 import nl.cqit.function.poc.java.boxedhello.services.helloworld.HelloWorldService;
 import org.springframework.boot.SpringApplication;
