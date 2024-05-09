@@ -1,12 +1,12 @@
-`cd boxedhello-minimal-app`
+`cd helloworld-app`
 
 `mvn clean native:compile -Pnative`
 
-`./target/boxedhello-minimal-app`
+`./target/helloworld-app`
 
 ```bash
 curl --header "Content-Type: application/json" \
 --request POST \
 --data '{"firstName":"John","lastName":"Johnson"}' \
-http://localhost:8090/boxedHello
+http://localhost:8080/helloWorld
 ```
